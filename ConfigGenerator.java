@@ -1,5 +1,5 @@
-public class ConfigGenerator() {
-public static void writeFile(
+public class ConfigGenerator {
+    public static void writeFile(
         HostVM[] hosts,
         DmzFwVM[] firewalls,
         HubNode[] hubs,
@@ -7,13 +7,13 @@ public static void writeFile(
         String path) {
         String outputText = "";
         for (hostVM node : hosts) {
-        outputText += "vm " + node.getName() + " {\n" +
-        "        os : " + node.getOs() + "\n" +
-        "        ver : \"" + node.getVer() + "\"\n" +
-        "        src : \"" + node.getSrc() + "\"\n" +
-        //TODO: Handle Eth addresses
+            outputText += "vm " + node.getName() + " {\n" +
+            "        os : " + node.getOs() + "\n" +
+            "        ver : \"" + node.getVer() + "\"\n" +
+            "        src : \"" + node.getSrc() + "\"\n" +
+            //TODO: Handle Eth addresses
 
-        "}\n\n";
+            "}\n\n";
         }
 
         //Write the string we just created to a file
@@ -22,5 +22,5 @@ public static void writeFile(
         writer.write(outputText);
         writer.close();
         return;
-        }
-        }
+    }
+}
